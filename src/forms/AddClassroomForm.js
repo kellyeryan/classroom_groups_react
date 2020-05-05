@@ -5,8 +5,6 @@ const AddClassroomForm = props => {
   const [classroom, setClassroom] = useState(initialFormState)
 
   const handleInputChange = event => {
-    console.log(event)
-    console.log(props)
     const { name, value } = event.target
 
     setClassroom({ ...classroom, [name]: value })
@@ -17,6 +15,7 @@ const AddClassroomForm = props => {
       onSubmit={event => {
         event.preventDefault()
         if (!classroom.name) return
+
         props.addClassroom(classroom)
         setClassroom(initialFormState)
       }}

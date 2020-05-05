@@ -16,6 +16,10 @@ const App = () => {
     setClassrooms([...classrooms, classroom])
   }
 
+  const deleteClassroom = id => {
+    setClassrooms(classrooms.filter(classroom => classroom.id !== id))
+  }
+
   return (
     <div className="container">
       <h1>Classroom Groups</h1>
@@ -26,7 +30,7 @@ const App = () => {
         </div>
         <div className="flex-large">
           <h2>View classes</h2>
-          <ClassroomTable classrooms={classrooms} />
+          <ClassroomTable classrooms={classrooms} deleteClassroom={deleteClassroom} />
         </div>
       </div>
     </div >
