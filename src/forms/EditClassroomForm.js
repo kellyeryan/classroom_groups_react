@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const EditClassroomForm = props => {
   const [classroom, setClassroom] = useState(props.currentClassroom)
@@ -8,6 +8,10 @@ const EditClassroomForm = props => {
 
     setClassroom({ ...classroom, [name]: value })
   }
+
+  useEffect(() => {
+    setClassroom(props.currentClassroom)
+  }, [props])
   return (
     <form
       onSubmit={event => {
