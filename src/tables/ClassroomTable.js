@@ -14,8 +14,20 @@ const ClassroomTable = (props) => (
           <tr key={classroom.id}>
             <td>{classroom.name}</td>
             <td>
-              <button className="button muted-button">Edit Class</button>
-              <button onClick={() => props.deleteClassroom(classroom.id)} className="button muted-button">Delete Class</button>
+              <button
+                onClick={() => {
+                  props.editRow(classroom)
+                }}
+                className="button muted-button"
+              >
+                Edit Class
+              </button>
+              <button
+                onClick={() => props.deleteClassroom(classroom.id)}
+                className="button muted-button"
+              >
+                Delete Class
+              </button>
             </td>
           </tr>
         ))
