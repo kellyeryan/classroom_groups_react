@@ -14,7 +14,7 @@ const App = () => {
           <ClassroomTable />
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 

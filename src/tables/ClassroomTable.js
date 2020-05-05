@@ -5,17 +5,15 @@ const ClassroomTable = () => (
     <thead>
       <tr>
         <th>Class Name</th>
-        <th>Student Names</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Name data</td>
-        <td>Names of Students</td>
         <td>
-          <button className="button muted-button">Add Student</button>
-          <button className="button muted-button">Edit Student</button>
-          <button className="button muted-button">Delete Student</button>
+          <button className="button muted-button">Edit Class</button>
+          <button className="button muted-button">Delete Class</button>
         </td>
       </tr>
     </tbody>
