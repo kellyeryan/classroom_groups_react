@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ClassroomTable = () => (
+const ClassroomTable = (props) => (
   <table>
     <thead>
       <tr>
@@ -9,13 +9,21 @@ const ClassroomTable = () => (
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Name data</td>
-        <td>
-          <button className="button muted-button">Edit Class</button>
-          <button className="button muted-button">Delete Class</button>
-        </td>
-      </tr>
+      {props.classrooms.length > 0 ? (
+        props.classrooms.map(classroom => (
+          <tr key={classroom.id}>
+            <td>{classroom.name}</td>
+            <td>
+              <button className="button muted-button">Edit Class</button>
+              <button className="button muted-button">Delete Class</button>
+            </td>
+          </tr>
+        ))
+      ) : (
+          <tr>
+            <td colSpan={3}>No classes</td>
+          </tr>
+        )}
     </tbody>
   </table>
 )
